@@ -696,18 +696,18 @@
 
             <div class="clue-item">
                 <div class="clue-number">1</div>
-                <p class="clue-text">Լայվ կազինոյի աշխատակիցը, ով բաժանում է քարտերը, հետևում խաղի կանոններին և կառավարում խաղասեղանը:</p>
+                <p class="clue-text">Կազինոյի կողմից խաղացողին տրվող հնարավորություն՝ հետ ստանալու պարտված գումարի որոշակի տոկոսը։</p>
             </div>
 
             <div class="clue-item">
                 <div class="clue-number">2</div>
-                <p class="clue-text">Խաղադրույքի անգլերեն անվանումը, որը լայնորեն օգտագործվում է թե՛ կազինոյում, թե՛ սպորտային խաղերում:</p>
+                <p class="clue-text">Պայման կամ գործակից, որը ցույց է տալիս, թե քանի անգամ պետք է խաղարկել ստացված բոնուսային գումարը՝ այն կանխիկացնելու
+                հնարավորություն ստանալու համար:</p>
             </div>
 
             <div class="clue-item">
                 <div class="clue-number">3</div>
-                <p class="clue-text">Հոգեբանական հնարք պոկերում, երբ խաղացողը ստիպում է մրցակիցներին հավատալ, որ իր քարտերն ավելի ուժեղ են, քան իրականում
-                կան:</p>
+                <p class="clue-text">Ռուլետկայի հիմնական գույներից մեկը:</p>
             </div>
 
         </div>
@@ -765,8 +765,9 @@
         <p>Ապրե՛ս, պատասխանդ ընդունված է</p>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
     function collectData(inputSelector) {
@@ -820,15 +821,17 @@
 
 <script>
 
+    const generateStars = (n)=> '*'.repeat(n)
+
     var words = [
-        { number: 1, direction: 'across', row: 2, column: 1, clue: '', answer: '*****', hint: 'http://www.angelo.edu/asu_facts/history.php' },
-        { number: 2, direction: 'down', row: 1, column: 4, clue: '', answer: '***', hint: 'http://www.angelo.edu/services/ticket_office/softball.php' },
-        { number: 3, direction: 'across', row: 1, column: 4, clue: '', answer: '****', hint: 'http://www.angelo.edu/services/specialevents/hhuc.php' },
+        { number: 1, direction: 'across', row: 2, column: 2, clue: '', answer: generateStars(6), hint: 'http://www.angelo.edu/asu_facts/history.php' },
+        { number: 2, direction: 'down', row: 1, column: 3, clue: '', answer: generateStars(6), hint: 'http://www.angelo.edu/services/ticket_office/softball.php' },
+        { number: 3, direction: 'across', row: 6, column: 1, clue: '', answer: generateStars(6), hint: 'http://www.angelo.edu/services/specialevents/hhuc.php' },
 
     ];
 
     // Set global variables
-    var gridSize = [7, 3];     // first width second argument height
+    var gridSize = [7, 6];     // first width second argument height
     var direction = 'across';   // set initial direction to 'across'
     var markCorrect = true;     // indicates ability for answers to be marked correct. will be set to false if "show answers" is clicked
     var successShown = false;   // indicates whether the success modal has been shown
@@ -1209,12 +1212,12 @@
         submitBtn.disabled = false;
     }
 
-    const wordLabels = document.querySelectorAll('.grid-square span.word-label')
-    let last = wordLabels[0]
-    last.style.width = "55px"
-    last.style.left = "-13px"
+    // const wordLabels = document.querySelectorAll('.grid-square span.word-label')
+    // let last = wordLabels[0]
+    // last.style.width = "55px"
+    // last.style.left = "-13px"
 
-    last.innerHTML = "2/3"
+    // last.innerHTML = "2/3"
 
 
 </script>
@@ -1229,3 +1232,4 @@
 
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
